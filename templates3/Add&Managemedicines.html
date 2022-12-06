@@ -1,0 +1,38 @@
+<!--<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">-->
+<!--<html xmlns="http://www.w3.org/1999/xhtml">-->
+<!--<head>-->
+<!--<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />-->
+<!--<title>Untitled Document</title>-->
+<!--</head>-->
+{% extends 'pharindex.html' %}
+{% block body %}
+<body>
+<form id="form1" name="form1" method="post" action="addmedi">
+  <table class="table table-striped">
+    <tr>
+      <td>Medicine Name  </td>
+      <td>Stock</td>
+      <td>Description</td>
+      <td>ExpDate</td>
+      <td>&nbsp;</td>
+    </tr>
+    {% for i in val %}
+    <tr>
+      <td>{{i.medicinename}}</td>
+      <td>&nbsp;{{i.stock}}</td>
+      <td>&nbsp;{{i.description}}</td>
+      <td>&nbsp;{{i.expdate}}</td>
+      <td><p><a href="{% url 'edits' id=i.id %}">Edit</a></p>
+      <p><a href="{% url 'delete' id=i.id %}">Delete</a></p></td>
+    </tr>
+    {% endfor %}
+    <tr>
+      <td colspan="5"><label>
+        <input type="submit" name="Submit" value="Add new" class="btn btn-info"/>
+      </label></td>
+    </tr>
+  </table>
+</form>
+</body>
+{% endblock %}
+<!--</html>-->
