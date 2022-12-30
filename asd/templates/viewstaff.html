@@ -1,0 +1,35 @@
+<!-- <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Untitled Document</title>
+</head> -->
+{% extends 'healthindex.html' %}
+{% block body %}
+<body>
+<form id="form1" name="form1" method="post" action="">
+  <h2>Staffs</h2>
+  <table class="table table-striped">
+    <tr>
+      <td>Name</td>
+      <td>Desig_id</td>
+      <td>phone</td>
+      <td>email</td>
+      <td>Dob</td>
+      <td>&nbsp;</td>
+    </tr>
+    {% for i in data['rrr'] %}
+    <tr>
+      <td>{{i['firstname']}}</td>
+      <td>{{i['desig_id']}}</td>
+      <td>{{i['phone']}}</td>
+      <td>{{i['email']}}</td>
+      <td>{{i['dob']}}</td>
+      <td><a href="addmeditation">Add meditation</a></td>
+    </tr>
+    {% endfor %}
+  </table>
+</form>
+</body>
+{% endblock %}
+<!-- </html> -->

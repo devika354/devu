@@ -1,0 +1,41 @@
+<!-- <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Untitled Document</title>
+</head> -->
+{% extends 'healthindex.html' %}
+{% block title %}
+<a href="#form1">form1</a>
+{% endblock %}
+
+{% block body %}
+<body>
+<form id="form1" name="form1" method="post" action="">
+  <h2>Appoinments</h2>
+  <table class="table table-striped">
+    <tr>
+      <td>Staff_id</td>
+      <td>Date</td>
+      <td>Status</td>
+      <td>&nbsp;</td>
+    </tr>
+    {% for i in data['rr'] %}
+    <tr>
+      <td>{{i['staff_id']}}</td>
+      <td>{{i['date']}}</td>
+      <td>{{i['status']}}</td>
+      <td><a href="viewstaf?id={{i['staff_id']}}&app_id={{i['app_id']}}">view staff</a></td>
+    </tr>
+    {% endfor %}
+  </table>
+</form>
+</body>
+{% endblock %}
+<!-- </html> -->
+
+
+
+
+
+
